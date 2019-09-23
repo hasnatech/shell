@@ -1,0 +1,138 @@
+<!-- {{ page | json}} -->
+<div class="add_content">
+  <hr class="dash" />
+  <button class="button add_button" (click)="show_layout = true">Add</button>
+</div>
+
+<div class="layout" *ngIf="show_layout == true">
+  <!-- <div class="arrow-up"></div> -->
+  <div class="layout_grid">
+    <div class="layout_row">
+      <div class="box" (click)="addLayout('single')">
+        <div class="single_layout">
+          <img src="assets/shell/single_layout.png" alt="Single Layout">
+        </div>
+      </div>
+      <div class="box" (click)="addLayout('30_70')">
+        <div class="">
+          <img src="assets/shell/30_70_layout.png" alt="30 70 Layout">
+        </div>
+      </div>
+      <div class="box" (click)="addLayout('70_30')">
+        <div class="">
+          <img src="assets/shell/70_30_layout.png" alt="70 30 Layout">
+        </div>
+      </div>
+    </div>
+    <div class="layout_row">
+      <div class="box" (click)="addLayout('50_50')">
+        <div class="">
+          <img src="assets/shell/50_50_layout.png" alt="50 50 Layout">
+        </div>
+      </div>
+      <div class="box" (click)="addLayout('3')">
+        <div class="">
+          <img src="assets/shell/3_layout.png" alt="3 Layout">
+        </div>
+      </div>
+      <div class="box" (click)="addLayout('4')">
+        <div class="">
+          <img src="assets/shell/4_layout.png" alt="4 Layout">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="fl-window" *ngIf="show_component == true">
+  <div class="fl-panel">
+    <div class="component">
+      <div class="layout_grid">
+        <div class="layout_row">
+          <div class="box" (click)="addComponent('heading')">
+            <div class="flex_center">
+              HEADING
+            </div>
+          </div>
+          <div class="box" (click)="addComponent('paragraph')">
+            <div class="flex_center">
+              PARAGRAPH
+            </div>
+          </div>
+          <div class="box" (click)="addComponent('image')">
+            <div class="flex_center">
+              IMAGE
+            </div>
+          </div>
+          <div class="box" (click)="addComponent('audio')">
+            <div class="flex_center">
+              AUDIO
+            </div>
+          </div>
+          <div class="box" (click)="addComponent('video')">
+            <div class="flex_center">
+              VIDEO
+            </div>
+          </div>
+          <div class="box" (click)="addComponent('other')">
+            <div class="flex_center">
+              OTHER
+            </div>
+          </div>
+        </div>
+        <div class="layout_row">
+          <div class="box" (click)="addLayout('50_50')">
+            <div class="">
+              <img src="assets/shell/50_50_layout.png" alt="50 50 Layout">
+            </div>
+          </div>
+          <div class="box" (click)="addLayout('3')">
+            <div class="">
+              <img src="assets/shell/3_layout.png" alt="3 Layout">
+            </div>
+          </div>
+          <div class="box" (click)="addLayout('4')">
+            <div class="">
+              <img src="assets/shell/4_layout.png" alt="4 Layout">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="row" *ngFor="let row of page.row; let i = index">
+
+    <div class="block">
+      <div *ngFor="let block of row.block; let j = index" class="cell {{block.class}}">
+        <div class="add_block" *ngIf="block.component == undefined">
+          <button class="button" (click)="addBlock(i, j)">Add Block</button>
+        </div>
+        
+        <heading *ngIf="block.component != undefined && block.component.type=='heading'"
+        [content] = "block.component.content"></heading>
+
+        <htmltext *ngIf="block.component != undefined && block.component.type=='htmltext'" 
+        [content] = "block.component.content.value"></htmltext>
+
+        <image *ngIf="block.component != undefined && block.component.type=='image'" 
+        [content] = "block.component.content"></image>
+<!--
+        <shellAudio *ngIf="block.component != undefined && block.component.type=='audio'" 
+        [content] = "block.component.content.value"></shellAudio>
+
+        <shellVideo *ngIf="block.component != undefined && block.component.type=='video'" 
+        [content] = "block.component.content.value"></shellVideo>
+-->
+      </div>
+    </div>
+
+    <div class="add_content">
+      <hr class="dash" />
+      <button class="button add_button" (click)="show_layout = true;insertAt = i+1">Add {{i}}</button>
+    </div>
+  </div>
+</div>

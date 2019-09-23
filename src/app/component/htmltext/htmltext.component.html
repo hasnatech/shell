@@ -1,0 +1,3 @@
+<!-- <div>{{this.service.mode}}</div> -->
+<div *ngIf="this.service.mode != 'edit'">{{content}}</div>
+<quill-editor *ngIf="this.service.mode == 'edit'" [(ngModel)]="content" theme="bubble"></quill-editor>

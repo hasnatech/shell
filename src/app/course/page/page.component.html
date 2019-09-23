@@ -1,0 +1,70 @@
+<div id="header">
+  <div id="menu_icon"></div>
+  <div class="playerTitle white_text hide_768">
+    <h2 class="bottom_0 ">{{content.course.title}} </h2>
+  </div>
+  <div id="logo"></div>
+</div>
+
+
+<div id="stage">
+  <div class="menu">
+    <ul>
+      <li (click)="gotoPage($index)" *ngFor="let item of content.menu.topic; let i = index;"
+        [ngClass]="{active : curr_page == i}">
+        <div id="tick_mark"></div>
+        <svg version="1.1" id="tick" *ngIf="curr_page == i" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 37"
+          style="enable-background:new 0 0 37 37;" xml:space="preserve">
+          <path class="circ path"
+            style="fill:none;stroke:#E2000F;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;"
+            d="
+                                   M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z" />
+          <polyline class="tick path"
+            style="fill:none;stroke:#E2000F;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                   11.6,20 15.9,24.2 26.4,13.8 " />
+        </svg>
+        <a href="#">{{item.title}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="page">
+    <div id="pageNo">
+      {{curr_page + 1}} / {{total_page}}
+    </div>
+    <div class="title">
+        <h2>{{page.title}}</h2>
+        <hr class="hr_width">
+    </div>
+    <div class="content">
+      <layout></layout>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="left">
+      <div id="progress">
+        <div id="outer">
+          <div id="inner"></div>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div id="next_tooltip" class="tooltip top" role="tooltip">
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner">
+        Click Next to continue.
+      </div>
+    </div>-->
+    <div class="right bottom_btn">
+      <div id="prev_btn" ng-class="{disable : curr_page == 0}" ng-click="prev()">
+      </div>
+      <div id="next_btn" ng-class="{disable : curr_page == total_page-1 || nextEnable != true}" ng-click="next()">
+      </div>
+      <div id="audio_btn" ng-click="audio_click()">
+        <img src="/assets/course1/{{audio_icon}}" alt="audio">
+      </div>
+    </div>
+
+  </div>
+</div>

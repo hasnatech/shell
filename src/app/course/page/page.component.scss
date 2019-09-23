@@ -1,0 +1,229 @@
+@import "../../../variables";
+#header #logo {
+    background-image: url('/assets/course1/splashscreen_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 219px;
+    height: 72px;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+#menu_icon {
+    background-image: url("/assets/course1/menu.png");
+    position: absolute;
+    left: 27px;
+    top: 20px;
+    width: 22px;
+    height: 21px;
+    z-index: 10;
+    cursor: pointer;
+}
+svg#tick {
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+.playerTitle {
+    /* float: left; */
+    /* height: 52px; */
+    margin-left: 69px;
+    margin-top: 10px;
+    /* width: 53%; */
+    margin-bottom: 15px;
+    h2 {
+        font-weight: normal;
+        font-size: x-large;
+        color:$white;
+        margin-top: 15px;
+    }
+}
+#header {
+    float: left;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    min-height: 60px;
+    background-color: #E2000F;
+   
+}
+.menu {
+    float: left;
+    width: 350px;
+    height: calc(100vh - 104px);
+    border-right: 1px solid #E2000F;
+    background-color: #fff;
+}
+
+.menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu ul li {
+    list-style: none;
+    margin: 2px 0px;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease, background-position 1ms;
+}
+
+.menu ul li:hover {
+    background-color: #fbfbfb;
+}
+
+.menu ul li a.active {
+    background-color: #eeffff;
+}
+
+.menu ul li.active {
+    border-left: 5px solid #E2000F;
+    background: #fbfbfb;
+}
+
+.menu ul li:hover a,
+.menu ul li.active a {
+    color: #E2000F;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu {
+    /* max-width: 250px; */
+    overflow: auto;
+    transition: height 0.5s;
+    /* -webkit-transition: all 0.5s ease; */
+}
+
+
+.footer {
+    position: fixed;
+    width: 100vw;
+    height: 40px;
+    bottom: 0px;
+    /*max-width: 1014px;*/
+    /*margin-left: 350px;*/
+    background-color: #E2000F;
+}
+
+.footer.full {
+    max-width: 1364px;
+    margin-left: 0px;
+}
+
+
+#progress>#outer {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#progress>#outer>#inner {
+    background-color: #575756;
+    margin: 1px;
+    width: calc(0% - 2px);
+    height: 8px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.right {
+    position: absolute;
+    display: flex;
+    right: 0px;
+}
+
+.bottom_btn>div {
+    padding: 10px;
+    cursor: pointer;
+    /* background-color: #B6000F; */
+    margin-right: 1px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.bottom_btn>div:hover {
+    background-color: #B6000F;
+}
+
+#prev_btn.disable {
+    background-image: url('/assets/course1/left_disable.png');
+    cursor: default;
+}
+
+#next_btn.disable {
+    background-image: url('/assets/course1/right_disable.png');
+    cursor: default;
+}
+
+#prev_btn.disable:hover,
+#next_btn.disable:hover {
+    background-color: #E2000F;
+}
+
+#prev_btn {
+    background-image: url('/assets/course1/left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#next_btn {
+    background-image: url('/assets/course1/right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#pageNo {
+    /*position: absolute;
+    left: 41px;
+    top: 15px;*/
+    font-size: small;
+    color: #869098;
+}
+
+#next_tooltip {
+    top: -33px;
+    right: 12px;
+}
+
+
+#page {
+    position: absolute;
+    margin-top: 64px;
+    margin-left: 351px;
+    height: calc(100% - 104px);
+    background-color: #ffffff;
+    /* width: calc(100% - 65px); */
+    padding: 20px;
+    width: calc(100% - 392px);
+    overflow: auto;
+    transition-delay: 2s;
+    transition: all 0.5s ease;
+}
+
+#page h2 {
+    font-weight: normal;
+    font-size: xx-large;
+}
+#page .title h2{
+    margin: 0px;
+}
+.hr_width {
+    margin: 5px 0px;
+    text-align: left;
+    width: 80px;
+    border-width: 3px;
+    border-color: #E2000F;
+    border-style: solid;
+}

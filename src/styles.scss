@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables";
+body{
+    background-color: $grey;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    font-weight: 300;
+} 
+
+.button 
+{
+    border: 0px;
+    border-radius: 20px;
+    padding: 6px 15px;
+    text-align: center;
+    min-width: 60px;
+    background-color:$dark-grey;
+    color: $white;
+    cursor: pointer;
+}
+
+.button-white-border{
+    background-color: transparent;
+    border: 1px solid $white;
+}
+
+
+.label{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.input-full {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid $border-color;
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.top-margin{
+    margin-top: 20px;
+}
+
+
+/*.Editor.*/
+
+.editor {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    margin: 10px;
+}
+.fl-window{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#333, 0.8);
+}
+.fl-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    z-index: 100;
+}

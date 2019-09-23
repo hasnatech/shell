@@ -1,0 +1,14 @@
+<div class="top_bar">
+  <button class="button" (click)="showpanel = true">New Course</button>
+</div>
+
+<div class="fl-window" *ngIf="showpanel == true">
+  <div class="fl-panel">
+      <h2>New Course</h2>
+      <form action="">
+        <label class="label" for="name">Course Name</label>
+        <input class="input-full" maxlength="100" type="text" name="name" />
+        <button type="submit" class="button savebtn" (click)="createCourse()">Create</button>
+      </form>
+  </div>
+</div>

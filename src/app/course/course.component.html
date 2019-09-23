@@ -1,0 +1,48 @@
+<div class="editor">
+
+  <button class="button edit" (click)="openWindow()">Edit</button>
+
+  <div class="fl-window" *ngIf="showWindow" [@changeState]="currentState">
+    <div class="fl-panel" >
+      <h2>Edit</h2>
+      <form action="">
+        <div>
+          <label class="label" for="name">Welcome</label>
+          <input class="input-full" maxlength="100" type="text" name="name" [(ngModel)]="content.course.welcome" />
+        </div>
+        <div>
+          <label class="label" for="title">Title</label>
+          <input class="input-full" maxlength="100" type="text" name="title" [(ngModel)]="content.course.title" />
+        </div>
+        <div>
+          <label class="label" for="desc">Description</label>
+          <textarea class="input-full" type="text" name="desc" [(ngModel)]="content.course.description"></textarea>
+        </div>
+        <button type="submit" class="button savebtn" (click)="closeWindow()">Close</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="splashScreen">
+  <div id="splashScreen_text">
+    <div class="splashscreen_logo">
+      <img src="{{content.course.logo}}">
+    </div>
+    <div class="sp_content white_text">
+      <p class="bottom_0">{{content.course.welcome}}</p>
+      <h1 class="top_0 bottom_0">{{content.course.title}}</h1>
+
+
+      <htmltext [content]="content.course.description"></htmltext>
+
+      <button class="button button-white-border uppercase top-margin"
+        (click)="startBtn()">{{content.course.start_btn}}</button>
+    </div>
+    <!-- <div id="sp_audio_btn" (click)="audio_click()">
+      <img ng-src="image/shell/{{audio_icon}}" alt="audio">
+    </div> -->
+  </div>
+</div>

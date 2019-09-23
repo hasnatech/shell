@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shell';
+  htmlText ="Sample Text"
+  submitButton(){
+    console.log(this.htmlText); 
+  } 
 }

@@ -1,0 +1,41 @@
+
+#splashScreen {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+}
+
+#splashScreen_text {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    background-image: url('/assets/course1/splash_screen.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.small_font
+{
+    font-size: 90%;
+}
+
+.splashscreen_logo {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+
+.sp_content {
+    margin: 150px 75px;
+    max-width: 500px;
+    overflow: auto;
+}
+
+.white_text {
+    color: #fff;
+}
+
+
